@@ -1,0 +1,17 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<h2>Available Medicines</h2>
+
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <h3>{{ product.name }}</h3>
+        <p>₱{{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <a href="/add/{{ product.id }}/">Add to Cart</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
